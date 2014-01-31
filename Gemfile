@@ -17,7 +17,11 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-will_paginate'
 
+# russify
+gem 'russian'
 
+# forms
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', require: false
