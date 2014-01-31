@@ -1,1 +1,8 @@
-h1 Тада
+
+h1 Страны
+table.table.table-striped
+  tbody
+    - Country.all.each do |c|
+      tr
+        td= c.title
+        td= c.code
