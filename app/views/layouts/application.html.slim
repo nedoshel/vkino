@@ -28,26 +28,19 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand href="#"Vkino
+          a.brand href=root_path Vkino
           .container-fluid.nav-collapse
-            ul.nav
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+            = render partial: 'shared/menu/top_menu'
 
     .container-fluid
 
       .row-fluid
         .span3
           .well.sidebar-nav
-            ul.nav.nav-list
-              li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+            = render partial: 'shared/menu/left_menu'
         .span9
           = bootstrap_flash
           = yield
 
       footer
-        p &copy; Company 2014
+        p &copy; Юлькино кино 2014
