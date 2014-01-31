@@ -23,6 +23,18 @@ gem 'russian'
 # forms
 gem 'simple_form'
 
+# files
+gem 'carrierwave'
+
+# sphinx
+gem 'thinking-sphinx', '3.0.3'
+gem 'flying-sphinx',   '1.0.0'
+
+# uploads
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :doc do
   gem 'sdoc', require: false
 end
