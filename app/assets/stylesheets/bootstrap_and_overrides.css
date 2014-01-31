@@ -1,5 +1,7 @@
 /*
-  = require twitter-bootstrap-static/bootstrap
-  = require twitter-bootstrap-static/fontawesome
-  = require themes/yeti/bootstrap
-  */
+  require twitter-bootstrap-static/bootstrap
+  require twitter-bootstrap-static/fontawesome
+
+= require bootstrap
+= require themes/yeti/bootstrap
+*/

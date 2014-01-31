@@ -1,4 +1,4 @@
-class PersonsController < ApplicationController
+class PersonsController < InheritedResources::Base
   def index
   end
 end

@@ -1,0 +1,17 @@
+.subnav
+  .navbar
+    .navbar-inner
+      ul.nav
+        li class=(controller.controller_path == item.pluralize && controller.action_name == "index" ? "active" : "")
+          a href=eval("#{item.pluralize}_path")
+            i.icon-list-alt
+            =t "controllers.#{item.pluralize}.index"
+        li class=(controller.controller_path == item.pluralize && controller.action_name == "new" ? "active" : "")
+          a href=eval("new_#{item}_path")
+            i.icon-list-alt
+            =t "controllers.#{item.pluralize}.new"
+
+      / .pull-right
+      /   = form_tag admin_users_path, class: "form-search", method: :get do |f|
+      /     = text_field_tag "q", params[:q].to_s, placeholder: 'поиск по email или имени', class: "search-query"
+      /     = submit_tag "поиск", class: "btn"

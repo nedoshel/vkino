@@ -1,0 +1,27 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    error_notification:
+      default_message: "Обнаружены ошибки при заполнении:"
+    labels:
+      defaults:
+        title:       Название
+        year:        Год выпуска
+        slogan:      Слоган
+        director_id: Режиссер
+        budget:      Бюджет
+        rating:      Рейтинг
+        our_rating:  Наш Рейтинг
+        duration:    Длительность
+        submit:      Сохранить
+    hints:
+      defaults:
+        submit:      Сохранить
+    placeholders:
+      defaults:
+        username: 'Your username'
+        password: '****'

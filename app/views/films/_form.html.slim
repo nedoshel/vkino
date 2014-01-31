@@ -1,0 +1,11 @@
+= simple_form_for(@film, html: { class: "form-horizontal", role: 'form' }, defaults: { input_html: { class: 'form-control' }, label_html: {class: 'col-sm-2' } }) do |f|
+
+  = f.input :title
+  = f.input :year
+  = f.input :slogan
+  = f.input :director_id
+  = f.input :budget
+  = f.input :rating
+  = f.input :our_rating
+  = f.input :duration
+  = f.button :submit

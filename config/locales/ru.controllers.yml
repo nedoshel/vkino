@@ -1,0 +1,8 @@
+ru:
+  controllers:
+    defaults: &defaults
+      index: Список всех
+      new:   Добавить
+    films:
+      <<: *defaults
+      title: Фильмы

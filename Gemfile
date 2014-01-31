@@ -14,7 +14,8 @@ gem 'jbuilder', '~> 1.2'
 # bootstrap
 gem "therubyracer"
 gem "less-rails"
-gem "twitter-bootstrap-rails"
+#gem "twitter-bootstrap-rails"
+gem 'bootstrap3-rails'
 gem 'bootstrap-will_paginate'
 
 # russify
@@ -34,6 +35,10 @@ gem 'flying-sphinx',   '1.0.0'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'cloudinary'
+
+#inherited_resources
+gem 'inherited_resources'
+gem 'responders'
 
 group :doc do
   gem 'sdoc', require: false
