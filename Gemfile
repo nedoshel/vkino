@@ -11,6 +11,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+# bootstrap
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
+
 group :doc do
   gem 'sdoc', require: false
+end
+group :development do
+  gem 'thin'
 end
