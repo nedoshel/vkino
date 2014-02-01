@@ -4,8 +4,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   version :standard do
-    # process eager: true
-    # process resize_to_fill: [100, 150, :north]
     resize_to_limit(350, nil)
   end
 
@@ -15,7 +13,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :slide do
     eager
-    resize_to_limit(nil, 400)
+    process resize_and_pad: [350, 500, '#008cba']
   end
 
   # Choose what kind of storage to use for this uploader:

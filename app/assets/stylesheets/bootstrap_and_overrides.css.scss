@@ -9,3 +9,12 @@
 .h70 {
   height: 70px;
 }
+
+.carousel-caption {
+  padding: 0 !important;
+  bottom: 10px !important;
+  a {
+    color: white;
+    font-size: 16px;
+  }
+}

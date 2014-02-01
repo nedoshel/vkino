@@ -1,10 +1,7 @@
 .col-md-4
   = render partial: 'shared/slider'
 .col-md-8
-  h1 Страны
+  h1 Последние просмотры
   table.table.table-striped
     tbody
-      - Country.all.each do |c|
-        tr
-          td= c.title
-          td= c.code
+      = render partial: 'shared/collection/film', collection: @films

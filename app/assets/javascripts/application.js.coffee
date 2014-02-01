@@ -3,7 +3,6 @@
 #= require js-routes
 #= require bootstrap_and_overrides
 #= require turbolinks
-#= require jquery.glide
 #= require chosen-jquery
 #= require_tree .
 
