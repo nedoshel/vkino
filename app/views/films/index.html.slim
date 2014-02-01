@@ -1,4 +1,10 @@
 = render partial: 'shared/menu/subnav', locals: { item: 'film' }
 table.table
+  thead
+    tr
+      th Название
+      th Страна
+      th Год
+      th.col-md-1 colspan=3 Количество просмотров
   tbody
     = render partial: 'shared/collection/film', collection: collection
