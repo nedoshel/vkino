@@ -14,3 +14,5 @@ $(document).on 'ready page:load', ->
     no_results_text: 'Ничего не найдено...'
     width: '100%'
     inherit_select_classes: true
+
+  $(".js-colorbox-image").colorbox()

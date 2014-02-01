@@ -1,6 +1,6 @@
 = render partial: 'shared/menu/subnav', locals: { item: 'film' }
 .media
-  a.pull-left.js-colobox-image href="#" data-src=@film.image.url
+  a.pull-left.js-colorbox-image href=@film.image.url
     img.media-object alt="" src=@film.image.url(:standard)
   .media-body
     h4.media-heading= @film.title
