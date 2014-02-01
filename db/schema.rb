@@ -1,0 +1,67 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20140201131225) do
+
+  create_table "countries", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "code"
+  end
+
+  create_table "film_countries", force: true do |t|
+    t.integer  "film_id"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "films", force: true do |t|
+    t.string   "title"
+    t.integer  "year"
+    t.string   "slogan"
+    t.integer  "director_id"
+    t.integer  "budget"
+    t.float    "rating"
+    t.float    "our_rating"
+    t.integer  "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+    t.integer  "views_count", default: 0
+  end
+
+  create_table "genres", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "name"
+    t.string   "profession"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "views", force: true do |t|
+    t.integer  "viewable_id"
+    t.string   "viewable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "views", ["viewable_id", "viewable_type"], name: "index_views_on_viewable_id_and_viewable_type", using: :btree
+
+end

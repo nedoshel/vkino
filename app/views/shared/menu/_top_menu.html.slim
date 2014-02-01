@@ -1,0 +1,9 @@
+a.navbar-brand href=root_path
+  | Vkino
+ul.nav.navbar-nav
+  li class=(params[:controller] == 'films' ? 'active' : '')
+    = link_to "Фильмы", films_path
+  li class=(params[:controller] == 'persons' ? 'active' : '')
+    = link_to "Люди", persons_path
+  li class=(params[:controller] == 'search' ? 'active' : '')
+    = link_to "Поиск", search_path

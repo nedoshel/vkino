@@ -1,0 +1,20 @@
+/*
+  require twitter-bootstrap-static/bootstrap
+  require twitter-bootstrap-static/fontawesome
+
+= require bootstrap
+= require themes/yeti/bootstrap
+*/
+
+.h70 {
+  height: 70px;
+}
+
+.carousel-caption {
+  padding: 0 !important;
+  bottom: 10px !important;
+  a {
+    color: white;
+    font-size: 16px;
+  }
+}

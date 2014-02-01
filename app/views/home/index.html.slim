@@ -1,0 +1,7 @@
+.col-md-4
+  = render partial: 'shared/slider'
+.col-md-8
+  h1 Последние просмотры
+  table.table.table-striped
+    tbody
+      = render partial: 'shared/collection/film', collection: @films

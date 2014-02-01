@@ -1,0 +1,20 @@
+h1 #{t("controllers.#{item.pluralize}.title")} - #{t("controllers.#{item.pluralize}.#{controller.action_name}")}
+.subnav.panel.panel-default.h70
+  .panel-body
+    .navbar
+      .navbar-inner
+        ul.nav.nav-pills
+          li class=(controller.controller_path == item.pluralize && controller.action_name == "index" ? "active" : "")
+            a href=eval("#{item.pluralize}_path")
+              i.icon-list-alt
+              =t "controllers.#{item.pluralize}.index"
+          li class=(controller.controller_path == item.pluralize && controller.action_name == "new" ? "active" : "")
+            a href=eval("new_#{item}_path")
+              i.icon-list-alt
+              =t "controllers.#{item.pluralize}.new"
+
+          - if ['show','edit'].include? controller.action_name
+            li class=(controller.controller_path == item.pluralize && controller.action_name == "edit" ? "active" : "")
+              a href=eval("edit_#{item}_path(#{params[:id]})")
+                i.icon-list-alt
+                =t "controllers.#{item.pluralize}.edit"

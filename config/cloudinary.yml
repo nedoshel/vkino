@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: vkino
+  api_key: '927851988112528'
+  api_secret: suFl0W528hytn8sKdMcVYf-lWMo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: vkino
+  api_key: '927851988112528'
+  api_secret: suFl0W528hytn8sKdMcVYf-lWMo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: vkino
+  api_key: '927851988112528'
+  api_secret: suFl0W528hytn8sKdMcVYf-lWMo
+  enhance_image_tag: true
+  static_image_support: false

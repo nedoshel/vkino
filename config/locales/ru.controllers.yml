@@ -1,0 +1,10 @@
+ru:
+  controllers:
+    defaults: &defaults
+      index: Список всех
+      new:   Добавить
+      edit:  Изменить
+      show:  Просмотр
+    films:
+      <<: *defaults
+      title: Фильмы

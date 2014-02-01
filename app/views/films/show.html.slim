@@ -1,0 +1,40 @@
+= render partial: 'shared/menu/subnav', locals: { item: 'film' }
+.media
+  a.pull-left.js-colorbox-image href=@film.image.url
+    img.media-object alt="" src=@film.image.url(:standard)
+  .media-body
+    h4.media-heading= @film.title
+    table.table
+      tbody
+        tr
+          td
+            b Страна
+          td= @film.countries_in_words
+        tr
+          td
+            b Год
+          td= @film.year
+        tr
+          td
+            b Слоган
+          td= @film.slogan
+        tr
+          td
+            b Режиссер
+          td= @film.director_id
+        tr
+          td
+            b Бюджет
+          td= number_to_currency @film.budget, unit: '$', precision: 0
+        tr
+          td
+            b Рейтинг
+          td= @film.rating
+        tr
+          td
+            b Наш рейтинг
+          td= @film.our_rating
+        tr
+          td
+            b Длительность
+          td= @film.duration
