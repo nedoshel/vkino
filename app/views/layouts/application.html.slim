@@ -27,10 +27,10 @@ html lang="en"
 
     .container style='margin-top: 60px;'
       .row
-        .col-md-4
-          .well.sidebar-nav
-            = render partial: 'shared/menu/left_menu'
-        .col-md-8
+        / .col-md-4
+        /   .well.sidebar-nav
+        /     = render partial: 'shared/menu/left_menu'
+        .col-md-12
           = yield
 
       footer

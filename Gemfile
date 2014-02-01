@@ -40,6 +40,11 @@ gem 'cloudinary'
 gem 'inherited_resources'
 gem 'responders'
 
+gem 'chosen-rails'
+
+#js routes
+gem "js-routes"
+
 group :doc do
   gem 'sdoc', require: false
 end

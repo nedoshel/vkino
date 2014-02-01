@@ -3,6 +3,7 @@ Vkino::Application.routes.draw do
 
   resources :films
   resources :persons
+  resources :views, only: [:create, :destroy]
 
   get '/search' => 'home#index', as: :search
 end

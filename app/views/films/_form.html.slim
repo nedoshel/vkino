@@ -2,10 +2,22 @@
 
   = f.input :title
   = f.input :year
+
+  - if @film.image.present?
+    .form-group
+      .control-label.col-sm-2
+        img alt="" src=@film.image.url(:thumbnail)
+      .col-sm-10
+        = f.file_field :image, class: "form-control"
+  - else
+    = f.input :image
+
+  = f.association :countries, collection: Country.all, include_blank: true, input_html: { class: 'chosen-select', data: { placeholder: 'Выберите страны' } }
+
   = f.input :slogan
   = f.input :director_id
   = f.input :budget
   = f.input :rating
   = f.input :our_rating
   = f.input :duration
-  = f.button :submit
+  = f.button :submit, class: 'pull-right btn-primary'

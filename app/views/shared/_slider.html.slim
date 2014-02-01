@@ -1,8 +1,5 @@
 .slider
   ul.slides
-    li.slide
-      | text
-    li.slide
-      | text
-    li.slide
-      | text
+    - @films.each do |f|
+      li.slide
+        = image_tag f.image.url(:standard)

@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131132849) do
+ActiveRecord::Schema.define(version: 20140201131225) do
 
   create_table "countries", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
+  end
+
+  create_table "film_countries", force: true do |t|
+    t.integer  "film_id"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "films", force: true do |t|
@@ -31,6 +38,8 @@ ActiveRecord::Schema.define(version: 20140131132849) do
     t.integer  "duration"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.integer  "views_count", default: 0
   end
 
   create_table "genres", force: true do |t|
@@ -45,5 +54,14 @@ ActiveRecord::Schema.define(version: 20140131132849) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "views", force: true do |t|
+    t.integer  "viewable_id"
+    t.string   "viewable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "views", ["viewable_id", "viewable_type"], name: "index_views_on_viewable_id_and_viewable_type", using: :btree
 
 end

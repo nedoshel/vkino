@@ -1,4 +1,4 @@
-h1 Фильмы
 = render partial: 'shared/menu/subnav', locals: { item: 'film' }
-- collection.each do |film|
-  = debug film
+table.table
+  tbody
+    = render partial: 'shared/collection/film', collection: collection
