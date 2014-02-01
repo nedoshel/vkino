@@ -1,5 +1,11 @@
 /*
- *= require_self
  *= require bootstrap_and_overrides
  *= require chosen
+ *= require colorbox-rails
+ *= require_self
  */
+
+ #cboxClose {
+  border: none;
+  display: block;
+ }

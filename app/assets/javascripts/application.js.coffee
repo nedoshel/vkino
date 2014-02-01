@@ -4,6 +4,7 @@
 #= require bootstrap_and_overrides
 #= require turbolinks
 #= require chosen-jquery
+#= require colorbox-rails
 #= require_tree .
 
 $(document).on 'ready page:load', ->

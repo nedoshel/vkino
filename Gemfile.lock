@@ -53,6 +53,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    colorbox-rails (0.1.0)
+      jquery-rails
+      rails (>= 3.1.1)
     commonjs (0.2.6)
     compass (0.12.2)
       chunky_png (~> 1.2)
@@ -213,6 +216,7 @@ DEPENDENCIES
   chosen-rails
   cloudinary
   coffee-rails (~> 4.0.0)
+  colorbox-rails
   flying-sphinx (= 1.0.0)
   inherited_resources
   jbuilder (~> 1.2)

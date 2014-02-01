@@ -45,6 +45,8 @@ gem 'chosen-rails'
 #js routes
 gem "js-routes"
 
+gem 'colorbox-rails'
+
 group :doc do
   gem 'sdoc', require: false
 end
