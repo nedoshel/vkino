@@ -3,7 +3,10 @@ Vkino::Application.routes.draw do
 
   resources :films
   resources :persons
-  resources :views, only: [:create, :destroy]
+  #resources :views, only: [:create, :destroy]
+
+  post '/views/:viewable_type/:viewable_id' => 'views#create', as: :views
+  delete '/views/:viewable_type/:viewable_id' => 'views#destroy', as: :view
 
   get '/search' => 'home#index', as: :search
 end

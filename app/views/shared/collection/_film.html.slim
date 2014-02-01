@@ -1,8 +1,11 @@
-tr
+tr.film data-id=film.id
   td= link_to film.title, film
   td= film.countries_in_words
   td= film.year
-  td= film.views_count
-  td
+  td.js-views-count= film.views_count
+  td.col-md-1
     = link_to '#', class: 'js-add-film-view', data: { viewable_id: film.id, viewable_type: 'Film'  } do
       span.glyphicon.glyphicon-plus
+  td.col-md-1
+    = link_to '#', class: 'js-remove-film-view', data: { viewable_id: film.id, viewable_type: 'Film'  } do
+      span.glyphicon.glyphicon-minus
