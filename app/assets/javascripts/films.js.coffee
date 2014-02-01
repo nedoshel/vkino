@@ -26,4 +26,4 @@ $(document)
     e.preventDefault()
     imgSrc = $(@).data "src"
     $.colorbox
-      html: "<img src=\"#{imgSrc}\">"
+      html: "<div class=\"row\"><div><img class=\"img-thumbnail\" src=\"#{imgSrc}\"></div></div>"
