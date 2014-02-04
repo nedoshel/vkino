@@ -76,6 +76,10 @@ $(document)
           if data.poster
             $('#film_remote_image_url').val data.poster
 
+          # Постер
+          if data.director
+            $('#film_directors').val data.director
+
 
 
 

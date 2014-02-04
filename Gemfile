@@ -45,6 +45,8 @@ gem 'colorbox-rails'
 
 gem 'nokogiri'
 
+gem 'enumerize'
+
 group :doc do
   gem 'sdoc', require: false
 end

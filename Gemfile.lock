@@ -64,6 +64,8 @@ GEM
     compass-rails (1.1.3)
       compass (>= 0.12.2)
     daemons (1.1.9)
+    enumerize (0.7.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -220,6 +222,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.0.0)
   colorbox-rails
+  enumerize
   flying-sphinx (= 1.0.0)
   inherited_resources
   jbuilder (~> 1.2)

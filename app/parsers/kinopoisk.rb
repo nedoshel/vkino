@@ -45,7 +45,7 @@ module Kinopoisk
     end
 
     def director
-      document.search("//td[@itemprop='director']/a").children.text
+      document.search("//td[@itemprop='director']/a").map{ |d| d.children.text.strip } rescue nil
     end
 
     def genres

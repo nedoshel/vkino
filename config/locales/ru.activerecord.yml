@@ -7,8 +7,8 @@ ru:
         title:       Название
         year:        Год выпуска
         slogan:      Слоган
-        director_id: Режиссер
         budget:      Бюджет
         rating:      Рейтинг
         our_rating:  Наш Рейтинг
         duration:    Длительность
+        directors:   Режиссер
