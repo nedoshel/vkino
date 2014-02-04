@@ -12,3 +12,5 @@ tr.film data-id=film.id
   td
     = link_to '#', class: 'js-remove-film-view', data: { viewable_id: film.id, viewable_type: 'Film'  } do
       span.glyphicon.glyphicon-minus
+
+  td= link_to '×', film_path(film), method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'close'

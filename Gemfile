@@ -23,9 +23,6 @@ gem 'russian'
 # forms
 gem 'simple_form'
 
-# files
-gem 'carrierwave'
-
 # sphinx
 gem 'thinking-sphinx', '3.0.3'
 gem 'flying-sphinx',   '1.0.0'
