@@ -21,7 +21,7 @@ class Film < ActiveRecord::Base
   accepts_nested_attributes_for :countries, allow_destroy: true, reject_if: proc{|att| att[:country_id].blank? }
 
   has_many :film_persons, dependent: :destroy
-  has_many :persons, through: :film_persons
+  has_many :persons, through: :film_persons, class_name: Person
   accepts_nested_attributes_for :persons, allow_destroy: true, reject_if: proc{|att| att[:person_id].blank? }
 
   # Просмотры
@@ -33,17 +33,22 @@ class Film < ActiveRecord::Base
     countries.map(&:title).join(", ")
   end
 
+  def directors_list
+    persons.with_profession(:director).map{ |d| d.name }.join(", ")
+  end
 
   def set_directors
     if directors.present?
       directors.split(",").each do |person|
-        self.person_ids << if Person.with_profession(:director).find_by_name(person.strip)
-          Person.with_profession(:director).find_by_name(person.strip).id
+        exist_person = Person.with_profession(:director).find_by_name(person.strip)
+        if exist_person
+          film_persons.find_or_initialize(person_id: exist_person.id)
         else
-          Person.create(name: person.strip, profession: :director).id
+          persons.new(name: person.strip, profession: :director)
         end
       end
     end
   end
+
 
 end

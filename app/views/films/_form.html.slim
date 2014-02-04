@@ -23,7 +23,7 @@
   = f.association :countries, collection: Country.all, include_blank: true, input_html: { class: 'chosen-select', data: { placeholder: 'Выберите страны' } }
 
   = f.input :slogan
-  = f.input :directors
+  = f.input :directors, input_html: { value: @film.directors_list }
   = f.input :budget
   = f.input :rating
   = f.input :our_rating
