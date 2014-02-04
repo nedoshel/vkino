@@ -42,7 +42,7 @@ class Film < ActiveRecord::Base
       directors.split(",").each do |person|
         exist_person = Person.with_profession(:director).find_by_name(person.strip)
         if exist_person
-          film_persons.find_or_initialize(person_id: exist_person.id)
+          film_persons.find_or_initialize_by_person_id(exist_person.id)
         else
           persons.new(name: person.strip, profession: :director)
         end
