@@ -34,13 +34,14 @@ $(document)
         error: (jqXHR, textStatus, errorThrown) ->
           console.log textStatus
         success: (data, textStatus, jqXHR) ->
-          console.log data
           # Название
           if data.title
             $('#film_title').val data.title
+
           # Год
           if data.year
             $('#film_year').val data.year
+
           # Страны
           if data.countries
             options = []
