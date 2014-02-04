@@ -1,4 +1,11 @@
 = simple_form_for(@film, html: { class: "form-horizontal", role: 'form' }, defaults: { input_html: { class: 'form-control' }, label_html: {class: 'col-sm-2' } }) do |f|
+  .form-group
+    = f.label :url, class: "control-label col-sm-2"
+    .col-sm-10
+      .col-sm-11 style='padding-left: 0;'
+        = f.text_field :url, class: 'form-control', label: false
+      .col-sm-1
+        = link_to 'parse', '#', class: 'js-film-url btn btn-primary'
 
   = f.input :title
   = f.input :year
@@ -11,6 +18,7 @@
         = f.file_field :image, class: "form-control"
   - else
     = f.input :image
+  = f.hidden_field :remote_image_url
 
   = f.association :countries, collection: Country.all, include_blank: true, input_html: { class: 'chosen-select', data: { placeholder: 'Выберите страны' } }
 

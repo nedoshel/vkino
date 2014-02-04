@@ -1,7 +1,11 @@
 Vkino::Application.routes.draw do
   root 'home#index'
 
-  resources :films
+  resources :films do
+    collection do
+      get '/parse' => 'films#parse'
+    end
+  end
   resources :persons
   #resources :views, only: [:create, :destroy]
 

@@ -14,7 +14,6 @@ gem 'jbuilder', '~> 1.2'
 # bootstrap
 gem "therubyracer"
 gem "less-rails"
-#gem "twitter-bootstrap-rails"
 gem 'bootstrap3-rails'
 gem 'bootstrap-will_paginate'
 
@@ -46,6 +45,8 @@ gem 'chosen-rails'
 gem "js-routes"
 
 gem 'colorbox-rails'
+
+gem 'nokogiri'
 
 group :doc do
   gem 'sdoc', require: false

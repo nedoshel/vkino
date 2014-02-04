@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201131225) do
+ActiveRecord::Schema.define(version: 20140204011546) do
 
   create_table "countries", force: true do |t|
     t.string   "title"
@@ -33,13 +33,14 @@ ActiveRecord::Schema.define(version: 20140201131225) do
     t.string   "slogan"
     t.integer  "director_id"
     t.integer  "budget"
-    t.float    "rating"
+    t.decimal  "rating",      precision: 8, scale: 2
     t.float    "our_rating"
     t.integer  "duration"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.integer  "views_count", default: 0
+    t.integer  "views_count",                         default: 0
+    t.string   "url"
   end
 
   create_table "genres", force: true do |t|
