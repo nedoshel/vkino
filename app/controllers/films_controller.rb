@@ -19,6 +19,6 @@ class FilmsController < InheritedResources::Base
   protected
 
     def collection
-      @projects ||= end_of_association_chain.paginate page: params[:page], per_page: Setting.films_per_page
+      (@films ||= end_of_association_chain).includes(:countries).paginate page: params[:page], per_page: Setting.films_per_page
     end
 end
