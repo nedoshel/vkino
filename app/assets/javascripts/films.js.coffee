@@ -2,6 +2,8 @@ $(document)
   # submit ajax form
   .on "click", '.ajax-form [type="checkbox"]', (e) ->
     $(@).closest('.ajax-form').submit()
+    if $(".js-is-viewed-filter").data("filter")
+      $(@).closest('.film').remove()
 
   # Фильтр просмотреных
   .on 'click', '.js-is-viewed-filter', (e) ->
