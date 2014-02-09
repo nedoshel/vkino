@@ -1,4 +1,4 @@
-= render partial: 'shared/menu/subnav', locals: { item: 'film' }
+= render partial: 'shared/menu/subnav', locals: { item: 'film', paginate_collection: collection }
 table.table
   thead
     tr
@@ -9,3 +9,4 @@ table.table
       th
   tbody
     = render partial: 'shared/collection/film', collection: collection
+.clearfix

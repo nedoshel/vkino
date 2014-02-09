@@ -27,6 +27,9 @@ class Film < ActiveRecord::Base
   # Просмотры
   has_many :views, as: :viewable, dependent: :destroy
 
+  # Уникальное имя по году
+  validates :title, uniqueness: { scope: :year }
+
   before_save :set_directors
 
   def countries_in_words

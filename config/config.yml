@@ -1,0 +1,8 @@
+development: &defaults
+  films_per_page:       20
+staging:
+  <<: *defaults
+production:
+  <<: *defaults
+test:
+  <<: *defaults

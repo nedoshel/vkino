@@ -18,3 +18,7 @@ h1 #{t("controllers.#{item.pluralize}.title")} - #{t("controllers.#{item.plurali
               a href=eval("edit_#{item}_path(#{params[:id]})")
                 i.icon-list-alt
                 =t "controllers.#{item.pluralize}.edit"
+
+          - if paginate_collection
+            li.pull-right
+              = will_paginate paginate_collection

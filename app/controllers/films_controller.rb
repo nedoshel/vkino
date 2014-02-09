@@ -1,9 +1,6 @@
 class FilmsController < InheritedResources::Base
   actions :all
 
-  def index
-  end
-
   def parse
     @film = Kinopoisk::Movie.new(params[:url])
     render json: {
@@ -15,7 +12,13 @@ class FilmsController < InheritedResources::Base
 
   private
 
-  def permitted_params
-    params.permit(film: [:directors, :url, :image, :remote_image_url, :title, :year, :slogan, :director_id, :budget, :rating, :our_rating, :duration, country_ids: []])
-  end
+    def permitted_params
+      params.permit(film: [:directors, :url, :image, :remote_image_url, :title, :year, :slogan, :director_id, :budget, :rating, :our_rating, :duration, country_ids: []])
+    end
+
+  protected
+
+    def collection
+      @projects ||= end_of_association_chain.paginate page: params[:page], per_page: Setting.films_per_page
+    end
 end
