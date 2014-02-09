@@ -1,27 +1,14 @@
 $(document)
-  .on 'click', '.js-add-film-view', (e) ->
-    e.preventDefault()
-    route =  Routes.views_path( $(@).data('viewable-type'), $(@).data('viewable-id') )
-    $.ajax route,
-      type: 'POST'
-      dataType: 'json'
-      data: {}
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log textStatus
-      success: (data, textStatus, jqXHR) ->
-        $(".film[data-id=#{data.viewable_id}]").find(".js-views-count").text data.views_count
+  # submit ajax form
+  .on "click", '.ajax-form [type="checkbox"]', (e) ->
+    $(@).closest('.ajax-form').submit()
 
-  .on 'click', '.js-remove-film-view', (e) ->
-    e.preventDefault()
-    route =  Routes.view_path( $(@).data('viewable-type'), $(@).data('viewable-id') )
-    $.ajax route,
-      type: 'DELETE'
-      dataType: 'json'
-      data: {}
-      error: (jqXHR, textStatus, errorThrown) ->
-        console.log textStatus
-      success: (data, textStatus, jqXHR) ->
-        $(".film[data-id=#{data.viewable_id}]").find(".js-views-count").text data.views_count
+  # Фильтр просмотреных
+  .on 'click', '.js-is-viewed-filter', (e) ->
+    if $(@).data("filter") == "viewed"
+      location.href = Routes.films_path()
+    else
+      location.href = Routes.filter_films_path(filter: "viewed")
 
   .on 'click', '.js-film-url' , (e) ->
     url = $('#film_url').val()
@@ -76,10 +63,10 @@ $(document)
           if data.poster
             $('#film_remote_image_url').val data.poster
 
-          # Постер
+          # Режиссер
           if data.director
-            $('#film_directors').val data.director
+            $('#film_director_list').val data.director
 
-
-
-
+          # Актеры
+          if data.actors
+            $('#film_actor_list').val data.actors

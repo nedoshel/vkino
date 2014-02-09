@@ -4,13 +4,7 @@ tr.film data-id=film.id
   td= film.year
 
   td
-    = link_to '#', class: 'js-add-film-view', data: { viewable_id: film.id, viewable_type: 'Film'  } do
-      span.glyphicon.glyphicon-plus
-
-  td.js-views-count= film.views_count
-
-  td
-    = link_to '#', class: 'js-remove-film-view', data: { viewable_id: film.id, viewable_type: 'Film'  } do
-      span.glyphicon.glyphicon-minus
+    = form_for film, html: { remote: true, class: 'ajax-form' } do |f|
+      = f.check_box :is_viewed
 
   td= link_to '×', film_path(film), method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'close'

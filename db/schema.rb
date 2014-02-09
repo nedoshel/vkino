@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204025351) do
+ActiveRecord::Schema.define(version: 20140209120717) do
 
   create_table "countries", force: true do |t|
     t.string   "title"
@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 20140204025351) do
     t.datetime "updated_at"
   end
 
-  create_table "film_persons", force: true do |t|
-    t.integer "film_id"
-    t.integer "person_id"
-  end
-
   create_table "films", force: true do |t|
     t.string   "title"
     t.integer  "year"
@@ -40,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140204025351) do
     t.decimal  "rating",      precision: 8, scale: 2
     t.float    "our_rating"
     t.integer  "duration"
+    t.boolean  "is_viewed",                           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
@@ -53,12 +49,23 @@ ActiveRecord::Schema.define(version: 20140204025351) do
     t.datetime "updated_at"
   end
 
-  create_table "persons", force: true do |t|
-    t.string   "name"
-    t.string   "profession"
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "views", force: true do |t|
     t.integer  "viewable_id"

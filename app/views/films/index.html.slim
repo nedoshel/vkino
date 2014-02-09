@@ -1,11 +1,20 @@
 = render partial: 'shared/menu/subnav', locals: { item: 'film', paginate_collection: collection }
+ul.nav.nav-tabs
+  li class=(params[:filter] ? "" : 'active')
+    a href=films_path Все
+  li class=(params[:filter] == 'viewed' ? "active" : '')
+    a  href=filter_films_path('viewed') Просмотренные
+  li class=(params[:filter] == 'unviewed' ? "active" : '')
+    a href=filter_films_path('unviewed') Непросмотренные
+
 table.table
   thead
     tr
       th Название
       th Страна
       th Год
-      th.col-md-1 colspan=3 Количество просмотров
+      th.col-md-1
+        span.glyphicon.glyphicon-eye-open.js-is-viewed-filter title="Просмотрено" data-filter=params[:filter]
       th
   tbody
     = render partial: 'shared/collection/film', collection: collection

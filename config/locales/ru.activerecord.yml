@@ -4,11 +4,14 @@ ru:
       film: 'Фильм'
     attributes:
       film:
-        title:       Название
-        year:        Год выпуска
-        slogan:      Слоган
-        budget:      Бюджет
-        rating:      Рейтинг
-        our_rating:  Наш Рейтинг
-        duration:    Длительность
-        directors:   Режиссер
+        title:           Название
+        year:            Год выпуска
+        slogan:          Слоган
+        budget:          Бюджет
+        rating:          Рейтинг
+        our_rating:      Наш Рейтинг
+        duration:        Длительность
+        director_list:   Режиссер
+        actor_list:      Актеры
+
+

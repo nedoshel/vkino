@@ -47,6 +47,8 @@ gem 'nokogiri'
 
 gem 'enumerize'
 
+gem 'acts-as-taggable-on'
+
 group :doc do
   gem 'sdoc', require: false
 end

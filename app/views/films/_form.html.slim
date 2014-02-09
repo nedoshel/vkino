@@ -19,11 +19,13 @@
   - else
     = f.input :image
   = f.hidden_field :remote_image_url
+  .chosen-block
+    = f.association :countries, label: 'Страна', collection: Country.all, include_blank: true, input_html: { class: 'chosen-select', data: { placeholder: 'Выберите страны' } }
 
-  = f.association :countries, collection: Country.all, include_blank: true, input_html: { class: 'chosen-select', data: { placeholder: 'Выберите страны' } }
+  =f.input :director_list, input_html: { placeholder: 'Выберите режиссёров через запятую' }
+  =f.input :actor_list, input_html: { placeholder: 'Выберите актеров через запятую' }
 
   = f.input :slogan
-  = f.input :directors, input_html: { value: @film.directors_list }
   = f.input :budget
   = f.input :rating
   = f.input :our_rating

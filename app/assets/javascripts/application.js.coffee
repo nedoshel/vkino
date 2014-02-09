@@ -3,9 +3,14 @@
 #= require js-routes
 #= require bootstrap_and_overrides
 #= require turbolinks
-#= require chosen-jquery
 #= require colorbox-rails
-#= require_tree .
+
+#= require chosen-jquery
+
+#= require films
+#= require home
+#= require views
+#= require_self
 
 $(document).on 'ready page:load', ->
   # enable chosen js
@@ -16,3 +21,7 @@ $(document).on 'ready page:load', ->
     inherit_select_classes: true
 
   $(".js-colorbox-image").colorbox()
+
+  $('[title]').tooltip
+    container: 'body'
+    placement: 'right'
