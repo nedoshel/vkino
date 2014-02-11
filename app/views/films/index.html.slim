@@ -1,4 +1,4 @@
-= render partial: 'shared/menu/subnav', locals: { item: 'film', paginate_collection: collection }
+= render partial: 'shared/menu/subnav'
 ul.nav.nav-tabs
   li class=(params[:filter] ? "" : 'active')
     a href=films_path Все
@@ -18,4 +18,4 @@ table.table
       th
   tbody
     = render partial: 'shared/collection/film', collection: collection
-.clearfix
+= will_paginate collection

@@ -1,0 +1,7 @@
+= simple_form_for(resource, as: :tag, html: { class: "form-horizontal", role: 'form' }, defaults: { input_html: { class: 'form-control' }, label_html: {class: 'col-sm-2' } }) do |f|
+
+  = f.input :name
+  - unless resource.new_record?
+    = f.association :films, label: 'Фильмы', collection: Film.tagged_with(resource.name), as: :check_boxes
+
+  = f.button :submit, class: 'pull-right btn-primary', value: 'Сохранить'

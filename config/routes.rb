@@ -7,7 +7,12 @@ Vkino::Application.routes.draw do
       get '/f/:filter' => 'films#index', as: :filter
     end
   end
-  resources :persons
+  resources :persons, as: :tags do
+    collection do
+      get '/f/:filter' => 'persons#index', as: :filter
+    end
+  end
+  resources :persons, only: [:show, :edit, :index]
 
   post '/views/:viewable_type/:viewable_id' => 'views#create', as: :views
   delete '/views/:viewable_type/:viewable_id' => 'views#destroy', as: :view

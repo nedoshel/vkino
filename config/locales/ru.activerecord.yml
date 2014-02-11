@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       film: 'Фильм'
+      tag:  'Персона'
     attributes:
       film:
         title:           Название
@@ -13,5 +14,5 @@ ru:
         duration:        Длительность
         director_list:   Режиссер
         actor_list:      Актеры
-
-
+      tag:
+        name:            Имя

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 
 gem 'rails', '4.0.2'
-gem 'mysql2'
+gem 'mysql2', '0.3.12b5', platform: :ruby
 gem 'sass-rails', '~> 4.0.0'
 gem "slim-rails"
 gem 'uglifier', '>= 1.3.0'

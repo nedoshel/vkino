@@ -1,0 +1,4 @@
+tr.person data-id=person.id
+  td= link_to person.name, tag_path(person)
+  td= person.taggings.count
+  td= link_to '×', tag_path(person), method: :delete, data: { confirm: 'Вы уверенны?' }, class: 'close'

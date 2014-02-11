@@ -1,4 +1,4 @@
-h1 #{t("controllers.#{item.pluralize}.title")} - #{t("controllers.#{item.pluralize}.#{controller.action_name}")}
+h1 #{t("controllers.#{item.pluralize}.title")} - #{t("controllers.#{item.pluralize}.#{controller.action_name}")} #{item_name}
 .subnav.panel.panel-default.h70
   .panel-body
     .navbar
@@ -18,7 +18,3 @@ h1 #{t("controllers.#{item.pluralize}.title")} - #{t("controllers.#{item.plurali
               a href=eval("edit_#{item}_path(#{params[:id]})")
                 i.icon-list-alt
                 =t "controllers.#{item.pluralize}.edit"
-
-          - if paginate_collection
-            li.pull-right
-              = will_paginate paginate_collection

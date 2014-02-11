@@ -31,6 +31,7 @@ html lang="en"
         /   .well.sidebar-nav
         /     = render partial: 'shared/menu/left_menu'
         .col-md-12
+          = flash_messages
           = yield
 
     .row-fluid

@@ -1,5 +1,4 @@
 class FilmsController < InheritedResources::Base
-  actions :all
 
   def parse
     @film = Kinopoisk::Movie.new(params[:url])

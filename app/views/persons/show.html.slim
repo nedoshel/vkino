@@ -1,0 +1,14 @@
+= render partial: 'shared/menu/subnav'
+h1 Фильмы
+table.table
+  thead
+    tr
+      th Название
+      th Страна
+      th Год
+      th.col-md-1
+        span.glyphicon.glyphicon-eye-open title="Просмотрено"
+      th
+  tbody
+    = render partial: 'shared/collection/film', collection: Film.tagged_with(resource.name)
+

@@ -1,1 +1,18 @@
-h1 Люди
+= render partial: 'shared/menu/subnav'
+ul.nav.nav-tabs
+  li class=(params[:filter] ? "" : 'active')
+    a href=tags_path Все
+  li class=(params[:filter] == 'actors' ? "active" : '')
+    a  href=filter_tags_path('actors') Актеры
+  li class=(params[:filter] == 'directors' ? "active" : '')
+    a href=filter_tags_path('directors') Режиссеры
+
+table.table
+  thead
+    tr
+      th Имя
+      th количество
+      th
+  tbody
+    = render partial: 'shared/collection/person', collection: collection
+= will_paginate collection

@@ -8,3 +8,7 @@ ru:
     films:
       <<: *defaults
       title: Фильмы
+    tags:
+      <<: *defaults
+      title: Люди
+
