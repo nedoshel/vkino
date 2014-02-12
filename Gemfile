@@ -24,8 +24,8 @@ gem 'russian'
 gem 'simple_form'
 
 # sphinx
-gem 'thinking-sphinx', '3.0.6'
-gem 'flying-sphinx',git: 'git://github.com/flying-sphinx/flying-sphinx.git'
+#gem 'thinking-sphinx', '3.0.6'
+#gem 'flying-sphinx',git: 'git://github.com/flying-sphinx/flying-sphinx.git'
 
 # uploads
 gem 'mini_magick'

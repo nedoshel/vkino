@@ -34,6 +34,12 @@ class Film < ActiveRecord::Base
   # Уникальное имя по году
   validates :title, uniqueness: { scope: :year }
 
+  class << self
+    def search(q)
+      self.where("title LIKE ?", "%#{q}%")
+    end
+  end
+
   def countries_in_words
     countries.map(&:title).join(", ")
   end
