@@ -5,5 +5,3 @@ development:
 production:
   utf8: true
   version: '2.0.6'
-  address: FLYING_SPHINX_HOST
-  port: FLYING_SPHINX_POST
