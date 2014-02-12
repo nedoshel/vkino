@@ -1,0 +1,16 @@
+= form_tag search_path, class: 'form-inline', method: :get do
+  .form-group.seach
+    = text_field_tag 'q', params[:q], class: 'form-control seach-input',  placeholder: "Часть названия фильма"
+    = submit_tag 'Поиск', class: 'btn seach-btn btn-primary'
+
+table.table
+  thead
+    tr
+      th Название
+      th Страна
+      th Год
+      th.col-md-1
+        span.glyphicon.glyphicon-eye-open.js-is-viewed-filter title="Просмотрено"
+      th
+  tbody
+    = render partial: 'shared/collection/film', collection: @films

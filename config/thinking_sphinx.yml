@@ -1,0 +1,4 @@
+development:
+  utf8: true
+production:
+  utf8: true

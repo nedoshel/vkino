@@ -24,7 +24,7 @@ gem 'russian'
 gem 'simple_form'
 
 # sphinx
-gem 'thinking-sphinx', '3.0.3'
+gem 'thinking-sphinx', '3.0.6'
 gem 'flying-sphinx',   '1.0.0'
 
 # uploads

@@ -17,5 +17,5 @@ Vkino::Application.routes.draw do
   post '/views/:viewable_type/:viewable_id' => 'views#create', as: :views
   delete '/views/:viewable_type/:viewable_id' => 'views#destroy', as: :view
 
-  get '/search' => 'home#index', as: :search
+  get '/search' => 'home#search', as: :search
 end
