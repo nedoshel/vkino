@@ -32,7 +32,7 @@ set :branch, 'master'
 set :server_name, "162.243.21.109"
 set :sudo_user, :deploy
 
-server 'idfly.ru', :app, :web, :db, primary: true
+server '162.243.21.109', :app, :web, :db, primary: true
 
 set :scm_verbose, true
 set :branch, "master"
