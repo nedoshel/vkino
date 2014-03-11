@@ -4,11 +4,12 @@ require "bundler/capistrano"
 require 'capistrano/nginx/tasks'
 
 ssh_options[:forward_agent] = true
+ssh_options[:port] = 22
 
 set :rails_env,   "production"
 set :app_env,     "production"
 
-set :app_port, 80
+# set :app_port, 80
 
 set :rvm_ruby_string, "ruby-2.0.0-p451"
 
@@ -16,26 +17,26 @@ set :rvm_type, :user
 
 set :default_shell, :bash
 
-
-set :scm, :git
-
+default_run_options[:pty] = true
 set :repository, "git@github.com:nedoshel/vkino.git"
-#set :local_repository, "muravkin@idfly:/home/admin/web/kolibri.idfly.ru/git/kolibri.git"
+set :scm, "git"
+
+
+set :branch, 'master'
 
 set :application, "vkino"
 
 set :deploy_to, "/var/www/vkino"
 
 set :thin_config, "config/thin/#{application}.yml"
-set :branch, 'master'
 
-set :server_name, "162.243.21.109"
+
+set :server_name, "vkino.muravkin.tk"
 set :sudo_user, :deploy
 
 server '162.243.21.109', :app, :web, :db, primary: true
 
 set :scm_verbose, true
-set :branch, "master"
 
 set :user, "deploy"
 
