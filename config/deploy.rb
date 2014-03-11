@@ -9,9 +9,10 @@ ssh_options[:port] = 22
 set :rails_env,   "production"
 set :app_env,     "production"
 
-# set :app_port, 80
+set :app_port, 80
 
-set :rvm_ruby_string, "ruby-2.0.0-p451"
+set :rvm_ruby_string, "ruby-2.0.0-p353"
+#set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,'')
 
 set :rvm_type, :user
 
@@ -50,7 +51,6 @@ set :bundle_cmd, "/home/#{user}/.rvm/gems/#{rvm_ruby_string}@global/bin/bundle"
 
 before 'deploy:migrate', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:create_db'
-after 'deploy:migrate', 'deploy:create_admin'
 before 'deploy:assets:precompile', 'deploy:migrate'
 after 'deploy', 'deploy:cleanup'
 
