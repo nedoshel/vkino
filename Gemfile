@@ -48,10 +48,14 @@ gem 'nokogiri'
 gem 'enumerize'
 
 gem 'acts-as-taggable-on'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
 end
+
 group :development do
-  gem 'thin'
+  gem 'capistrano', '2.15.5'
+  gem 'rvm-capistrano'
+  gem 'capistrano-nginx'
 end
